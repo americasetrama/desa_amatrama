@@ -7,7 +7,7 @@
 
 # Site settings
 
-baseurl: /uni
+baseurl: /desa_amatrama
 exclude: ['README.md', 'Gemfile']
 permalink: pretty
 
