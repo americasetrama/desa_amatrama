@@ -1,0 +1,74 @@
+.top-bar {
+	position: fixed;
+	height: 60px;
+	background: #333;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	z-index: 999;
+	padding: 0;
+	box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+	-webkit-transition: all 0.3s cubic-bezier(0.7, 0, 0.3, 1);
+	-moz-transition: all 0.3s cubic-bezier(0.7, 0, 0.3, 1);
+	transition: all 0.3s cubic-bezier(0.7, 0, 0.3, 1);
+
+    @include media($ipad) {
+		padding: 0 0 0 40px;
+    }
+
+	nav {
+		flex: 1;
+		padding: 0;
+
+	    @include media($ipad) {
+			opacity: 0;
+			visibility: hidden;
+	    }
+
+		a {
+			font-family: $headerFont;
+			padding: 0 20px;
+			color: #333;
+			font-weight: 600;
+			text-transform: uppercase;
+			font-size: 15px;
+			letter-spacing: 1px;
+		}
+	}
+}
+
+.nav-social {
+	display: flex;
+	width: 100px;
+	justify-content: space-around;
+	font-size: 22px;
+	margin-right: 15px;
+
+	a {
+		color: #333;
+	}
+}
+
+.github-ama {
+	background: #ddd;
+	display: flex;
+	align-items: center;
+	padding: 0 10px 0 33px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	span {
+		font-family: $headerFont;
+		position: relative;
+		top: -2px;
+		right: 11px;
+		font-weight: 600;
+	}
+}

@@ -1,0 +1,155 @@
+.featured-container {
+    padding: 0 0 50px;
+    background: #f9f9f9;
+
+    .duration {
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+
+    h3 {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.40);
+        padding-bottom: 15px;
+
+        @include media($mobile) {
+            font-size: 22px;
+        }
+    }
+
+    .description {
+        margin-top: 13px;
+        font-size: 16px;
+        line-height: 20px;
+
+        @include media($mobile) {
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+
+    .meta {
+        margin-top: 15px;
+    }
+
+}
+
+.owl-wrapper-outer {
+	background-image: url(/uni/assets/back-trama-shipi.svg);
+    background-size: 160px;
+}
+
+.owl-carousel .owl-item {
+    float: left;
+    padding: 0;
+    //text-align: center;
+
+    .item {
+    	padding: 35px 22vw 60px;
+    	min-height: 350px;
+    	height: 350px !important;
+    	display: flex;
+    	align-items: center;
+    	justify-content: center;
+
+    	.content {
+    		position: relative;
+    		z-index: 1;
+    	}
+
+		&.trama-espiritualidad {
+    		background: #efd510;
+    		color: #333;
+
+    		h3 {
+    			border-bottom: 2px solid rgba(0, 0, 0, 0.4)!important;
+    		}
+
+	    	a {
+	    		color: #333;
+			    border-bottom: 1px solid #333;
+	    	}
+    	}
+    	&.trama-contracultura {
+    		background: #f2910a;
+    		color: #fff;
+    	}
+    	&.trama-psiconautica {
+    		background: #e84545;
+    		color: #fff;
+    	}
+    	&.trama-politica {
+    		background: #951556;
+    		color: #fff;
+    	}
+    	&.trama-ciencia {
+    		background: #283996;
+    		color: #fff;
+    	}
+    	&.trama-naturaleza {
+    		background: #25a55f;
+    		color: #fff;
+    	}
+
+        &.trama-feminismo-consciente {
+            background: #333;
+            color: #fff;
+        }
+
+    	&:before {
+    		    content: "";
+    		    width: 100vw;
+    		    height: 100vh;
+                background-image: url(/uni/assets/back-trama-shipi.svg);
+    		    top: 0;
+    		    right: 0;
+    		    position: absolute;
+    		    display: inline-block;
+    		    background-size: 160px;
+    		    opacity: 0.1;
+    		    z-index: 0;
+    	}
+
+    	a {
+    		color: #fff;
+		    border-bottom: 1px solid #fff;
+    	}
+
+		@include media($ipad) {
+			padding: 2em;
+		}
+    }
+}
+
+.owl-buttons {
+	position: absolute;
+	top: -250px;
+	right: 0;
+	left: 0;
+
+	@include media($ipad) {
+		display: none;
+	}
+}
+
+.owl-theme .owl-controls .owl-buttons div {
+	position: absolute;
+	background: none !important;
+	color: #fff;
+	opacity: 0.5;
+	-webkit-transition: all 0.3s cubic-bezier(0.7, 0, 0.3, 1);
+	-moz-transition: all 0.3s cubic-bezier(0.7, 0, 0.3, 1);
+	transition: all 0.3s cubic-bezier(0.7, 0, 0.3, 1);
+    font-size: 5rem;
+
+	&:hover {
+		opacity: 0.8;
+	}
+}
+
+
+.owl-pagination {
+    position: absolute;
+    left: calc(50vw - 100px);
+    width: 200px;
+    top: 10px;
+}

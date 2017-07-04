@@ -1,0 +1,185 @@
+---
+layout: default
+---
+
+<script>
+  $(document).ready(function(){
+    $('.featured-container').owlCarousel({
+        center: true,
+        singleItem:true,
+        navigation : true, // Show next and prev buttons
+        navigationText: [
+        "<i class='fa fa-angle-left'></i>",
+        "<i class='fa fa-angle-right'></i>"
+        ],
+        items:1,
+        autoplayHoverPause: true,
+        autoHeight:true,
+        slideSpeed : 1000,
+        autoPlay: 10000,
+        paginationSpeed : 2000,
+        loop:true,
+        margin:10,
+    })
+  });
+</script>
+
+<div class="featured-container owl-carousel owl-theme">
+  {% assign features = site.posts | where:"featured", true %}
+  {% for post in features limit:7 %}
+  <div class="item trama-{{post.category}}" data-dot="trama-{{post.category}}">
+    <div class="content">
+      <h5 class="mono-space">
+        <span class="duration">
+          {% if post.type contains 'articulo' %}
+              Lectura de
+          {% else %}
+              Video de
+          {% endif %}
+          {{post.duration}}
+          sobre
+          <a href="/uni/{{post.category}}">
+           {{post.category}}
+          </a> 
+        </span>
+      </h5>
+      <a href="{{site.baseurl}}{{post.url}}" class="header">
+        <span aria-hidden="true" class="post-status"></span>
+        <h3 class="mono-space">
+          {{post.title}}
+        </h3>
+      </a>
+      <div class="description">
+        {{post.meta}}
+        <div class="meta mono-space">
+          Vía <a href="{{post.author_url}}" target="_blank">{{post.author}}</a>,
+          {% include meta-time.html %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<aside class="js-menu sliding-panel-content" style="left: -270px;">
+  <div class="ui secondary vertical pointing menu">
+    <a class="item" href="/uni/tramas/">
+      <i class="fa fa-sitemap"></i>
+       Explorar trama
+    </a>
+    <a class="item" href="/uni/feminismo-consciente/">
+      <i class="fa fa-venus-mars"></i>
+       Feminismo consciente
+    </a>
+    <a class="item" href="/uni/espiritualidad/">
+      <i class="fa fa-sun-o"></i>
+      espiritualidad
+    </a>
+    <a class="item" href="/uni/contracultura/">
+      <i class="fa fa-fire"></i>
+      contracultura
+    </a>
+    <a class="item" href="/uni/psiconautica/">
+      <i class="fa fa-compass"></i>
+      psiconautica
+    </a>
+    <a class="item" href="/uni/politica/">
+      <i class="fa fa-street-view"></i>
+      politica
+    </a>
+    <a class="item" href="/uni/ciencia/">
+      <i class="fa fa-flask"></i>
+      ciencia
+    </a>
+    <a class="item" href="/uni/naturaleza/">
+      <i class="fa fa-leaf"></i>
+      naturaleza
+    </a>
+  </div>
+  {% include search-form.html %}
+
+
+</aside>
+
+<div class="home-post" style="padding-bottom: 100px;padding: 0 11px;">
+  <div class="container" style="max-width: 900px;margin: 0 auto;">
+    <h2 class="mono-space" style="    text-align: left;
+    width: 100%;
+    font-size: 28px;
+    margin-top: 35px;
+    margin-bottom: 33px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;">Tramas
+      <a href="/uni/tramas/" style="font-size: 16px;color: #4183c4;">ver todas <span>({{ site.posts | size }})</span></a>
+    </h2>
+    
+    <div class="controls" style="width: 100%;">
+      <button type="button" class="ui button compact large trama-feminismo-consciente" data-filter=".trama-feminismo-consciente">
+        <i class="fa fa-venus-mars" style="font-size: 20px;"></i>
+      </button>
+      <button type="button" class="ui button compact large trama-naturaleza" data-filter=".trama-naturaleza">
+        <i class="fa fa-leaf" style="font-size: 20px;"></i>
+      </button>
+      <button type="button" class="ui button compact large trama-ciencia" data-filter=".trama-ciencia">
+        <i class="fa fa-flask" style="font-size: 20px;"></i>
+      </button>
+      <button type="button" class="ui button compact large trama-psiconautica" data-filter=".trama-psiconautica">
+        <i class="fa fa-compass" style="font-size: 20px;"></i>
+      </button>
+      <button type="button" class="ui button compact large trama-espiritualidad" data-filter=".trama-espiritualidad">
+        <i class="fa fa-sun-o" style="font-size: 20px;"></i>
+      </button>
+      <button type="button" class="ui button compact large trama-contracultura" data-filter=".trama-contracultura">
+        <i class="fa fa-fire" style="font-size: 20px;"></i>
+      </button>
+      <button type="button" class="ui button compact large trama-politica" data-filter=".trama-politica">
+        <i class="fa fa-street-view" style="font-size: 20px;"></i>
+      </button>
+    </div>
+
+    <h4 class="mix trama-feminismo-consciente" style="display:none; width: 100%;text-transform: uppercase;padding-top: 27px; text-align: left;"> Feminismo consciente</h4>
+    <h4 class="mix trama-naturaleza" style="display:none; width: 100%;text-transform: uppercase;padding-top: 27px; text-align: left;">naturaleza</h4>
+    <h4 class="mix trama-ciencia" style="display:none; width: 100%;text-transform: uppercase;padding-top: 27px; text-align: left;">ciencia</h4>
+    <h4 class="mix trama-psiconautica" style="display:none; width: 100%;text-transform: uppercase;padding-top: 27px; text-align: left;">psiconautica</h4>
+    <h4 class="mix trama-espiritualidad" style="display:none; width: 100%;text-transform: uppercase;padding-top: 27px; text-align: left;">espiritualidad</h4>
+    <h4 class="mix trama-contracultura" style="display:none; width: 100%;text-transform: uppercase;padding-top: 27px; text-align: left;">contracultura</h4>
+    <h4 class="mix trama-politica" style="display:none; width: 100%;text-transform: uppercase;padding-top: 27px; text-align: left;">politica</h4>
+    {% assign home-list = site.posts | where:"featured", false %}
+    {% for post in home-list limit:25 %}
+      <div class="mix item trama-{{post.category}} trama-{{post.type}}" style="width:100%;" data-published-date="{{ post.date | %Y-%m-%d %H:%M+01:00 }}">
+        <div class="content">
+          <h3 class="mono-space">
+                      <a href="/uni/{{post.category}}">
+          {{post.category}}
+          </a> / {{post.type}}
+          </h3>
+          <a href="{{site.baseurl}}{{post.url}}" class="header">
+            <span aria-hidden="true" class="post-status"></span>
+            {{post.title}}<br>
+            <i class="duration">
+                {{post.duration}}
+                {% if post.type contains 'articulo' %}
+                    de lectura
+                {% else %}
+                    de video
+                {% endif %}
+            </i>
+          </a>
+          <div class="description">
+            {{post.meta}}
+          </div>
+          <div class="meta mono-space">
+            {% include meta-time.html %} - 
+            Vía <a href="{{post.author_url}}" target="_blank">{{post.author}}</a>
+          </div>
+        </div>
+      </div>
+    {%endfor %}
+  </div>
+</div>
+{% include footer.html %}
+
+

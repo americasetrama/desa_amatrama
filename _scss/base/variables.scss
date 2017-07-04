@@ -1,0 +1,29 @@
+$mobile: new-breakpoint(max-width 500px 4);
+$ivertical: new-breakpoint(max-width 770px 12);
+$ipad: new-breakpoint(max-width 1024px 12);
+$desktop: new-breakpoint(max-width 1240px 12);
+
+.trama-espiritualidad {
+	color: #fbbd08;
+}
+.trama-contracultura {
+	color: #f2910a;
+}
+.trama-psiconautica {
+	color: #e84545;
+}
+.trama-politica {
+	color: #951556;
+}
+
+.purple {
+	background: #951556 !important;
+}
+
+.trama-ciencia {
+	color: #283996;
+}
+.trama-naturaleza {
+	color: #25a55f;
+}
+

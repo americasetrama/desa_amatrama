@@ -1,0 +1,76 @@
+
+@-webkit-keyframes movearound {
+	0% {
+		fill:#efd510;
+	}
+	15% {
+		fill:#f2910a;
+	}
+	30% {
+		fill:#e84545;
+	}
+	45% {
+		fill:#951556;
+	}
+	60% {
+		fill:#283996;
+	}
+	80% {
+		fill:#25a55f;
+	}
+	100% {
+		fill:#efd510;
+	}
+}
+
+
+
+.logo {
+	font-size: 50px;
+
+	-webkit-transition: all 0.3s cubic-bezier(0.7, 0, 0.3, 1);
+	-moz-transition: all 0.3s cubic-bezier(0.7, 0, 0.3, 1);
+	transition: all 0.3s cubic-bezier(0.7, 0, 0.3, 1);
+
+	position: fixed;
+	top: 5px;
+	left: calc(50% - 55px);
+	width: 110px;
+
+
+	@include media($ipad) {
+		left: 65px;
+	}
+
+
+    @include media($mobile) {
+
+    	span {
+    	}
+    }
+
+
+
+	svg {
+		height: 1em;
+		width: 1em;
+	}
+
+	.logo-fill{
+		-webkit-animation: movearound 18s ease infinite normal;
+	}
+
+	span {
+		position: relative;
+		top: -7px;
+		left: -5px;
+		color: #333;
+
+		@include media($ipad) {
+			//top: -60px;
+			transform: rotate(90deg);
+		}
+	}
+
+
+}

@@ -1,0 +1,103 @@
+.main-container {
+	padding: 60px 0 0 0;
+	//max-width: 1080px;
+	margin: 0 auto;
+}
+
+.home-post {
+
+	a span:after {
+		content: 'Nuevo!';
+		font-size: .7em;
+		vertical-align: middle;
+		display: inline-block;
+		color: #333;
+		//margin-left: .5em;
+		position: absolute;
+		right: 15px;
+		bottom: 1em;
+	}
+	a:visited span:after {
+		color: #fff;
+	}
+
+	.item {
+		min-width: 49%;
+		margin: 1em 0;
+
+		@include media($ipad) {
+			width: 48%;
+		}
+
+		@include media($ivertical) {
+			width: 100% !important;
+		    flex: 1 1 100%;
+		}
+
+		.content {
+			padding: 1em;
+			-webkit-transition: all 0.3s cubic-bezier(0.7, 0, 0.3, 1);
+			-moz-transition: all 0.3s cubic-bezier(0.7, 0, 0.3, 1);
+			transition: all 0.3s cubic-bezier(0.7, 0, 0.3, 1);
+			height: 100%;
+			position: relative;
+			border: 1px solid;
+
+			&:hover {
+				//background: #f1f1f1;
+			}
+		}
+
+		.duration {
+		    font-family: $headerFont;
+		    padding: 9px 0 0 0;
+		    font-size: 15px;
+		    font-weight: 400;
+		    color: #999;
+		    display: block;
+		}
+
+
+
+	}
+
+	.meta {
+		font-weight: bold;
+	}
+
+	a {
+		color: inherit;
+		opacity: 0.9;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	h3 {
+		display: block;
+		font-size: 15px;
+		margin-bottom: 10px;
+	}
+
+	.description {
+		color: #333;
+		margin: 10px 0;
+		font-size: 16px;
+		line-height: 23px;
+	}
+
+	.header {
+		font-family: $headerFont;
+		font-size: 20px;
+		font-weight: 600;
+	}
+
+
+
+	span {
+		color: #333;
+		font-family: $headerFont;
+	    font-variant-ligatures: none;
+	}
+}
